@@ -2,6 +2,7 @@
     "users": [
         {
             "id": "111",
+            "username": "adminMonika",
             "email": "monika123@gmail.com",
             "password": "",
             "passwordText": "Admin123!",
@@ -14,6 +15,7 @@
         },
         {
             "id": "222",
+            "username": "userAmelija",
             "email": "amelija456@gmail.com",
             "password": "",
             "passwordText": "User456@",

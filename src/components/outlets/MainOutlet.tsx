@@ -1,13 +1,16 @@
 import { Outlet } from "react-router";
 
+import Header from "../UI/organisms/Header";
+import Footer from "../UI/organisms/Footer";
+
 const MainOutlet = () => {
     return (
         <>
-            <header></header>
+            <Header />
             <main>
                 <Outlet />
             </main>
-            <footer></footer>
+            <Footer />
         </>
     );
 }

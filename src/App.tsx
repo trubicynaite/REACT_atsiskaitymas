@@ -24,7 +24,7 @@ const App = () => {
         <Route path="" element={<MainOutlet />}>
           <Route index element={<Home />} />
           <Route path="/add" element={loggedInUser ? <AddProduct /> : <Navigate to='/' replace />} />
-          <Route path="/likedProducts" element={loggedInUser ? <LikedProducts /> : <Navigate to='/' replace />} />
+          <Route path="/liked" element={loggedInUser ? <LikedProducts /> : <Navigate to='/' replace />} />
           <Route path=":id" element={<SpecificProductPage />} />
         </Route>
       </Routes>
