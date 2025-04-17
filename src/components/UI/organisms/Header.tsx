@@ -11,31 +11,33 @@ const StyledHeader = styled.header`
   justify-content: space-between;
   background-color: #1a1a1a;
 
-  .logo {
+  >div.logo {
     display: flex;
     align-items: center;
     gap: 10px;
 
-    img {
+    >img {
       height: 60px;
       border-radius: 50%;
     }
 
-    span {
+    >span {
       font-weight: bold;
       font-size: 1.5rem;
       color: palevioletred;
     }
   }
 
-  nav ul {
+  >nav {
+    >ul {
     display: flex;
     gap: 20px;
     list-style: none;
     margin: 0;
     padding: 0;
 
-    li a {
+    >li{
+    >a {
       text-decoration: none;
       color: white;
       font-size: 1.2rem;
@@ -47,34 +49,35 @@ const StyledHeader = styled.header`
       &.active {
         color: palevioletred;
       }
+     }
     }
   }
+}
 
-  .userContainer {
+  >div.userContainer {
     display: flex;
     align-items: center;
     gap: 10px;
 
-    .profile {
+    >div.profile {
       display: flex;
       align-items: center;
       gap: 8px;
 
-      img {
+    >img {
         height: 40px;
         width: 40px;
         border-radius: 50%;
         object-fit: cover;
       }
 
-      span {
+    >span {
         color: white;
         font-weight: bold;
       }
     }
 
-    a,
-    button {
+   >a, button {
       background-color: palevioletred;
       border: none;
       border-radius: 50px;
@@ -83,16 +86,16 @@ const StyledHeader = styled.header`
       color: white;
       font-weight: bold;
       font-size: 1rem;
-      transition: background-color 0.3s ease;
       cursor: pointer;
 
       &:hover {
         background-color: #ffc0e6;
         color: black;
+        transition: color 0.3s ease;
       }
     }
 
-    button {
+    >button {
       border: 1px solid white;
       background: transparent;
     }
@@ -141,11 +144,7 @@ const Header = () => {
                 {loggedInUser ? (
                     <>
                         <div className="profile">
-                            <img
-                                src={
-                                    loggedInUser.profilePicture}
-                                alt={loggedInUser.username}
-                            />
+                            <img src={loggedInUser.profilePicture} alt={loggedInUser.username} />
                             <span>{loggedInUser.username}</span>
                         </div>
                         <button onClick={handleLogout}>Logout</button>
