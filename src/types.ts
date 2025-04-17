@@ -35,3 +35,12 @@ export type UsersContextTypes = {
     setLoggedInUser: React.Dispatch<React.SetStateAction<User | null>>,
     dispatch: React.Dispatch<UsersReducerActionTypes>
 };
+
+export type ProductsReducerActionTypes =
+    { type: 'setData', data: Product[] } |
+    { type: 'deleteProduct', productId: Product["id"] };
+
+export type ProductsContextTypes = {
+    products: Product[],
+    deleteProduct: (id: Product["id"]) => void
+};
