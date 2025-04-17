@@ -4,6 +4,7 @@ export type ChildrenProp = {
 
 export type User = {
     id: string,
+    username: string,
     email: string,
     password: string,
     passwordText: string,
