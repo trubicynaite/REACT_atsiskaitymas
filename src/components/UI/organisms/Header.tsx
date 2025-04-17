@@ -1,4 +1,4 @@
-import { Link, NavLink, useNavigate } from "react-router";
+import { Link, NavLink, useNavigate, useLocation } from "react-router";
 import styled from "styled-components";
 import { useContext } from "react";
 import UsersContext from "../../../contexts/UsersContext";
@@ -39,8 +39,9 @@ const StyledHeader = styled.header`
     >li{
     >a {
       text-decoration: none;
-      color: white;
-      font-size: 1.2rem;
+      font-weight: bold;
+      font-size: 1.5rem;
+      color: palevioletred;
 
       &:hover {
         color: #ffc0e6;
@@ -112,6 +113,9 @@ const Header = () => {
         navigate("/");
     };
 
+    const location = useLocation();
+    const loginOrRegister = location.pathname === "/register" || location.pathname === "/login";
+
     return (
         <StyledHeader>
             <div className="logo">
@@ -127,35 +131,39 @@ const Header = () => {
                     <li>
                         <NavLink to="/">Home</NavLink>
                     </li>
-                    {loggedInUser?.role === "admin" && (
+                    {!loginOrRegister && loggedInUser?.role === "admin" && (
                         <li>
                             <NavLink to="/add">Add Product</NavLink>
                         </li>
                     )}
-                    {loggedInUser?.role === "user" && (
+                    {!loginOrRegister && loggedInUser?.role === "user" && (
                         <li>
                             <NavLink to="/liked">Liked Products</NavLink>
                         </li>
                     )}
                 </ul>
             </nav>
-
-            <div className="userContainer">
-                {loggedInUser ? (
-                    <>
-                        <div className="profile">
-                            <img src={loggedInUser.profilePicture} alt={loggedInUser.username} />
-                            <span>{loggedInUser.username}</span>
-                        </div>
-                        <button onClick={handleLogout}>Logout</button>
-                    </>
-                ) : (
-                    <>
-                        <Link to="/login">Login</Link>
-                        <Link to="/register">Register</Link>
-                    </>
-                )}
-            </div>
+            {!loginOrRegister && (
+                <div className="userContainer">
+                    {loggedInUser ? (
+                        <>
+                            <div className="profile">
+                                <img
+                                    src={loggedInUser.profilePicture}
+                                    alt={loggedInUser.username}
+                                />
+                                <span>{loggedInUser.username}</span>
+                            </div>
+                            <button onClick={handleLogout}>Logout</button>
+                        </>
+                    ) : (
+                        <>
+                            <Link to="/login">Login</Link>
+                            <Link to="/register">Register</Link>
+                        </>
+                    )}
+                </div>
+            )}
         </StyledHeader>
     );
 };
