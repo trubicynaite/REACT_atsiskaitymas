@@ -1,3 +1,7 @@
+export type ChildrenProp = {
+    children: React.ReactElement
+}
+
 export type User = {
     id: string,
     email: string,
@@ -5,7 +9,7 @@ export type User = {
     passwordText: string,
     dob: string,
     profilePicture: string,
-    role: string,
+    role: "admin" | "user",
     likedProducts: string[]
 };
 
@@ -18,4 +22,16 @@ export type Product = {
     description: string,
     productPicture: string,
     skinType: string[]
-}
+};
+
+export type UsersReducerActionTypes =
+    { type: 'setData', data: User[] } |
+    { type: 'addUser', newUser: User } |
+    { type: 'likeProduct', productId: Product["id"], userId: User['id'] };
+
+export type UsersContextTypes = {
+    users: User[],
+    loggedInUser: User | null,
+    setLoggedInUser: React.Dispatch<React.SetStateAction<User | null>>,
+    dispatch: React.Dispatch<UsersReducerActionTypes>
+};
