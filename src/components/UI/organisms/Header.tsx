@@ -114,7 +114,7 @@ const Header = () => {
     };
 
     const location = useLocation();
-    const loginOrRegister = location.pathname === "/register" || location.pathname === "/login";
+    const notHomePage = location.pathname === "/register" || location.pathname === "/login";
 
     return (
         <StyledHeader>
@@ -131,19 +131,19 @@ const Header = () => {
                     <li>
                         <NavLink to="/">Home</NavLink>
                     </li>
-                    {!loginOrRegister && loggedInUser?.role === "admin" && (
+                    {!notHomePage && loggedInUser?.role === "admin" && (
                         <li>
                             <NavLink to="/add">Add Product</NavLink>
                         </li>
                     )}
-                    {!loginOrRegister && loggedInUser?.role === "user" && (
+                    {!notHomePage && loggedInUser?.role === "user" && (
                         <li>
                             <NavLink to="/liked">Liked Products</NavLink>
                         </li>
                     )}
                 </ul>
             </nav>
-            {!loginOrRegister && (
+            {!notHomePage && (
                 <div className="userContainer">
                     {loggedInUser ? (
                         <>
