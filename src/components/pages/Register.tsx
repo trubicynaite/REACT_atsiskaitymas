@@ -275,7 +275,7 @@ const Register = () => {
                         <input type="submit" value="Register" />
                     </form>
                     {
-                        registerMessage && <p style={{ color: 'palevioletred' }}>{registerMessage}</p>
+                        registerMessage && <p style={{ color: '#ff69b4' }}>{registerMessage}</p>
                     }
                     {
                         error && <p style={{ color: 'white' }}>{error}</p>

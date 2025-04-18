@@ -191,7 +191,7 @@ const Login = () => {
                         <input type="submit" value="Log In" />
                     </form>
                     {
-                        loginMessage && <p style={{ color: 'palevioletred' }}>{loginMessage}</p>
+                        loginMessage && <p style={{ color: '#ff69b4' }}>{loginMessage}</p>
                     }
                     {
                         error && <p style={{ color: 'white' }}>{error}</p>
