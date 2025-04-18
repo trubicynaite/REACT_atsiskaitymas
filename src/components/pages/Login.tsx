@@ -58,6 +58,7 @@ const StyledLogin = styled.section`
 
         &:focus{
           background-color: pink;
+          color: black;
         }
       }
 
@@ -102,16 +103,15 @@ const Login = () => {
         },
         validationSchema: Yup.object({
             email: Yup.string()
-                .email()
-                .required('Field cannot be empty')
+                .email('Must be a valid email.')
+                .required('Field cannot be empty.')
                 .trim(),
             password: Yup.string()
                 .matches(
                     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{7,20}$/,
-                    'Password must contain at least one: lower case character, upper case character, number, special symbol AND must be between 7 and 20 symbols length.'
-                )
-                .required('Field cannot be empty')
-                .trim('Empty spaces are ignored')
+                    'Password must contain: both lower and upper case characters, a number, a special symbol. Length must be between 7 and 20 symbols.')
+                .required('Field cannot be empty.')
+                .trim()
 
         }),
         onSubmit: (values) => {
