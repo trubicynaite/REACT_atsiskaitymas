@@ -47,11 +47,7 @@
             "category": "face",
             "price": 40,
             "description": "The Huda Beauty Easy Bake Loose Powders are inspired by Huda’s strong belief that the technique of baking is a key step to a flawless finish while ensuring long-lasting, melt-proof makeup.",
-            "productPicture": "https://www.douglas.lt/images/galleries/1677753636_6291106032284.jpg",
-            "skinType": [
-                "normal",
-                "combination"
-            ]
+            "productPicture": "https://www.douglas.lt/images/galleries/1677753636_6291106032284.jpg"
         },
         {
             "id": "2",
@@ -60,10 +56,7 @@
             "category": "eyes",
             "price": 44,
             "description": "Bobbi Brown's bestselling, long-lasting, ultra-black mascara builds smokey-eye-worthy volume lash by lash without clumping, flaking, or smudging.",
-            "productPicture": "https://www.douglas.lt/images/galleries/1685603811_716170119717_0.jpg",
-            "skinType": [
-                "all skin types"
-            ]
+            "productPicture": "https://www.douglas.lt/images/galleries/1685603811_716170119717_0.jpg"
         },
         {
             "id": "3",
@@ -72,10 +65,7 @@
             "category": "lips",
             "price": 48,
             "description": "Formulated with Extra Plump Complex, a blend of moisture-boosting botanical oils and hyaluronic acid, this lip serum ensures hydrated and plump lips.",
-            "productPicture": "https://www.douglas.lt/images/galleries/1714122113_716170336084.jpg",
-            "skinType": [
-                "all skin types"
-            ]
+            "productPicture": "https://www.douglas.lt/images/galleries/1714122113_716170336084.jpg"
         }
     ]
 }
