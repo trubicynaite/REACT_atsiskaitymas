@@ -275,7 +275,10 @@ const Register = () => {
                         <input type="submit" value="Register" />
                     </form>
                     {
-                        error && <p>{error}</p>
+                        registerMessage && <p style={{ color: 'palevioletred' }}>{registerMessage}</p>
+                    }
+                    {
+                        error && <p style={{ color: 'white' }}>{error}</p>
                     }
                     <Link to="/login">Aleady have an account? Go login.</Link>
                 </>
