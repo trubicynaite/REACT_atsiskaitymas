@@ -1,70 +1,81 @@
 {
-    "users": [
-        {
-            "id": "111",
-            "username": "adminMonika",
-            "email": "monika123@gmail.com",
-            "password": "",
-            "passwordText": "Admin123!",
-            "dob": "2001-01-01",
-            "profilePicture": "https://media.istockphoto.com/id/1135769825/vector/star-icon-vector-illustration.jpg?s=612x612&w=0&k=20&c=6jMpeAqUVM2db6kdhzj-nxA52Sqk3ImpN-GP9lIeaXE=",
-            "role": "admin",
-            "likedProducts": [
-                "1"
-            ]
-        },
-        {
-            "id": "222",
-            "username": "userAmelija",
-            "email": "amelija456@gmail.com",
-            "password": "",
-            "passwordText": "User456@",
-            "dob": "2002-02-02",
-            "profilePicture": "https://static.vecteezy.com/system/resources/thumbnails/000/378/728/small/Basic_Elements__28120_29.jpg",
-            "role": "user",
-            "likedProducts": [
-                "2",
-                "3"
-            ]
-        }
-    ],
-    "products": [
-        {
-            "id": "1",
-            "name": "Easy Bake Loose Baking & Setting Powder",
-            "brandName": "Huda Beauty",
-            "category": "face",
-            "price": 40,
-            "description": "The Huda Beauty Easy Bake Loose Powders are inspired by Huda’s strong belief that the technique of baking is a key step to a flawless finish while ensuring long-lasting, melt-proof makeup.",
-            "productPicture": "https://www.douglas.lt/images/galleries/1677753636_6291106032284.jpg",
-            "skinType": [
-                "normal",
-                "combination"
-            ]
-        },
-        {
-            "id": "2",
-            "name": "Smokey Eye Mascara",
-            "brandName": "Bobby Brown",
-            "category": "eyes",
-            "price": 44,
-            "description": "Bobbi Brown's bestselling, long-lasting, ultra-black mascara builds smokey-eye-worthy volume lash by lash without clumping, flaking, or smudging.",
-            "productPicture": "https://www.douglas.lt/images/galleries/1685603811_716170119717_0.jpg",
-            "skinType": [
-                "all skin types"
-            ]
-        },
-        {
-            "id": "3",
-            "name": "Extra Plump Lip Serum",
-            "brandName": "Bobby Brown",
-            "category": "lips",
-            "price": 48,
-            "description": "Formulated with Extra Plump Complex, a blend of moisture-boosting botanical oils and hyaluronic acid, this lip serum ensures hydrated and plump lips.",
-            "productPicture": "https://www.douglas.lt/images/galleries/1714122113_716170336084.jpg",
-            "skinType": [
-                "all skin types"
-            ]
-        }
-    ]
+  "users": [
+    {
+      "id": "111",
+      "username": "adminMonika",
+      "email": "monika123@gmail.com",
+      "password": "$2b$10$CgQ22/SsKQQfHNenaNesCeablV3buPoS/ThLyC19vaWKrPZjQwsQK",
+      "passwordText": "Admin123!",
+      "dob": "2001-01-01",
+      "profilePicture": "https://static.vecteezy.com/system/resources/previews/019/816/407/non_2x/pink-couple-hearts-large-size-of-emoji-romance-icon-vector.jpg",
+      "role": "admin",
+      "likedProducts": [
+        "1"
+      ]
+    },
+    {
+      "id": "222",
+      "username": "userAmelija",
+      "email": "amelija456@gmail.com",
+      "password": "$2b$10$bOcIjF6cyyNb3OcFN1BvqeHBQTF6YRsl./Au5GH2Sl6QxUTYyGerq",
+      "passwordText": "User456@",
+      "dob": "2002-02-02",
+      "profilePicture": "https://hips.hearstapps.com/hmg-prod/images/heart-with-ribbon-643083459dc7f.jpg?crop=1xw:1xh;center,top&resize=980:*",
+      "role": "user",
+      "likedProducts": [
+        "2",
+        "3"
+      ]
+    },
+    {
+      "id": "0fa744ed-1680-4fb1-af56-81bb1f6de116",
+      "username": "jovita123",
+      "email": "jovita123@gmail.com",
+      "password": "$2b$10$GH55MFo1A0A0UtLzNsmj3OnXjrS3aQS1HiNTUHuLTYBIL8TovTzNG",
+      "dob": "2010-02-03",
+      "profilePicture": "https://gimgs2.nohat.cc/thumb/f/640/emoji-heart-iphone-sticker-clip-art-pink-heart-emoji-png--m2i8G6Z5K9N4A0K9.jpg",
+      "likedProducts": [],
+      "passwordText": "Jovita123!",
+      "role": "user"
+    }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "name": "Easy Bake Loose Baking & Setting Powder",
+      "brandName": "Huda Beauty",
+      "category": "face",
+      "price": 40,
+      "description": "The Huda Beauty Easy Bake Loose Powders are inspired by Huda’s strong belief that the technique of baking is a key step to a flawless finish while ensuring long-lasting, melt-proof makeup.",
+      "productPicture": "https://www.douglas.lt/images/galleries/1677753636_6291106032284.jpg",
+      "skinType": [
+        "normal",
+        "combination"
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Smokey Eye Mascara",
+      "brandName": "Bobby Brown",
+      "category": "eyes",
+      "price": 44,
+      "description": "Bobbi Brown's bestselling, long-lasting, ultra-black mascara builds smokey-eye-worthy volume lash by lash without clumping, flaking, or smudging.",
+      "productPicture": "https://www.douglas.lt/images/galleries/1685603811_716170119717_0.jpg",
+      "skinType": [
+        "all skin types"
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Extra Plump Lip Serum",
+      "brandName": "Bobby Brown",
+      "category": "lips",
+      "price": 48,
+      "description": "Formulated with Extra Plump Complex, a blend of moisture-boosting botanical oils and hyaluronic acid, this lip serum ensures hydrated and plump lips.",
+      "productPicture": "https://www.douglas.lt/images/galleries/1714122113_716170336084.jpg",
+      "skinType": [
+        "all skin types"
+      ]
+    }
+  ]
 }

@@ -87,13 +87,12 @@ const Login = () => {
     const [error, setError] = useState('');
     const [loginMessage, setLoginMessage] = useState('');
     const navigate = useNavigate();
-
     const [loading, setLoading] = useState(true);
+
     useEffect(() => {
         const timer = setTimeout(() => setLoading(false), 50);
         return () => clearTimeout(timer);
     }, []);
-
 
     const formik = useFormik({
         initialValues: {
@@ -117,7 +116,7 @@ const Login = () => {
         onSubmit: (values) => {
             if (users) {
                 const foundUser = users.find(user =>
-                    user.email === values.email &&
+                    user.email.trim() === values.email.trim() &&
                     bcrypt.compareSync(values.password, user.password)
                 );
                 if (foundUser) {
@@ -127,13 +126,12 @@ const Login = () => {
                     setLoggedInUser(foundUser);
                     setLoginMessage(`Login was successful, you'll be redirected shortly.`);
                     setError('');
-
                     setTimeout(() => {
                         navigate('/');
                     }, 1500);
                 } else {
-                    setError('Invalid email or password.');
                     setLoginMessage('');
+                    setError('Invalid email or password.');
                 }
             }
         }
@@ -196,7 +194,7 @@ const Login = () => {
                         loginMessage && <p style={{ color: 'palevioletred' }}>{loginMessage}</p>
                     }
                     {
-                        error && <p style={{ color: 'pink' }}>{error}</p>
+                        error && <p style={{ color: 'white' }}>{error}</p>
                     }
                     <Link to="/register">Don't have an account yet? Go create one.</Link>
                 </>

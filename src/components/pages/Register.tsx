@@ -84,7 +84,8 @@ const StyledRegister = styled.section`
 const Register = () => {
 
     const { users, dispatch, setLoggedInUser } = useContext(UsersContext) as UsersContextTypes;
-    const [error, setError] = useState<string | null>(null);
+    const [error, setError] = useState('');
+    const [registerMessage, setRegisterMessage] = useState('');
     const navigate = useNavigate();
     const [loading, setLoading] = useState(true);
     useEffect(() => {
@@ -139,6 +140,7 @@ const Register = () => {
                 user.email === values.email || user.username === values.username
             )) {
                 setError('This user already exists. Try logging in.');
+                setRegisterMessage('');
                 return;
             } else {
                 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -148,7 +150,7 @@ const Register = () => {
                     id: generatedId(),
                     passwordText: rest.password,
                     password: bcrypt.hashSync(rest.password, 10),
-                    profilePicture: rest.profilePicture || 'https://upload.wikimedia.org/wikipedia/commons/a/ac/Default_pfp.jpg',
+                    profilePicture: rest.profilePicture || 'https://gimgs2.nohat.cc/thumb/f/640/emoji-heart-iphone-sticker-clip-art-pink-heart-emoji-png--m2i8G6Z5K9N4A0K9.jpg',
                     role: 'user',
                     likedProducts: []
                 }
@@ -157,8 +159,12 @@ const Register = () => {
                     type: 'addUser',
                     newUser: newUser
                 });
+                setRegisterMessage(`Registration was successful, you'll be redirected shortly.`);
+                setError('');
                 formik.resetForm();
-                navigate('/')
+                setTimeout(() => {
+                    navigate('/')
+                }, 1500);
             }
         }
     });
