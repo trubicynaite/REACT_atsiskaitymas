@@ -16,7 +16,7 @@ const StyledRegister = styled.section`
 
   >h2 {
     text-align: center;
-    color: palevioletred;
+    color: #ff69b4;
   }
 
   >form {
@@ -38,7 +38,7 @@ const StyledRegister = styled.section`
     }
     
     >input[type="submit"] {
-    background-color: palevioletred;
+    background-color: #ff69b4;
     border: none;
     border-radius: 50px;
     padding: 8px 16px;
@@ -50,7 +50,7 @@ const StyledRegister = styled.section`
     transition: background-color 0.3s ease;
 
     &:hover {
-      background-color: #ffc0e6;
+      background-color: #ffa1d0;
       color: black;
       }
     }
@@ -61,7 +61,7 @@ const StyledRegister = styled.section`
       > input{
 
         &:focus{
-          background-color: pink;
+          background-color: #ffa1d0;
           color: black;
         }
       }
@@ -70,13 +70,13 @@ const StyledRegister = styled.section`
   }
   > a {
     margin-top: 12px;
-    color: palevioletred;
+    color: #ff69b4;
     font-size: 14px;
     text-decoration: underline;
 
     &:hover {
       text-decoration: underline;
-      color: gold;
+      color: white;
     }
   }
 `
