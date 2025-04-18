@@ -84,14 +84,43 @@ const StyledCard = styled.div`
         color: white;
         }
     }
+
+    .creator{
+        display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+  border-top: 1px solid #ff69b4;
+  padding-top: 10px;
+
+  > img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  > div {
+    display: flex;
+    flex-direction: column;
+
+    > p {
+      margin: 0;
+      font-size: 0.85rem;
+      color: #ffa1d0;
+    }
+  }
+    }
 `
 
 const ProductCard = ({ data, hideLikeButton }: Props) => {
 
-    const { loggedInUser, dispatch } = useContext(UsersContext) as UsersContextTypes;
+    const { users, loggedInUser, dispatch } = useContext(UsersContext) as UsersContextTypes;
     const { deleteProduct } = useContext(ProductsContext) as ProductsContextTypes;
     const navigate = useNavigate();
     const [likedMessage, setLikedMessage] = useState<string>('');
+
+    const creator = users.find(user => user.id === data.creatorId);
 
     const likeProduct = () => {
         if (!loggedInUser) {
@@ -131,25 +160,25 @@ const ProductCard = ({ data, hideLikeButton }: Props) => {
             <img src={data.productPicture} alt={data.name} />
             <p>Price: {data.price} Eur.</p>
             <p>Description: {data.description}</p>
-            {data.creatorId && (
-                <p style={{ fontSize: '0.8rem', color: '#ffa1d0' }}>
-                    <strong>Creator:</strong> {data.creatorId}
-                </p>
-            )}
-
-            {data.createdAt && (
-                <p style={{ fontSize: '0.8rem', color: '#ffa1d0' }}>
-                    <strong>Created at:</strong> {new Date(data.createdAt).toLocaleString()}
-                </p>
-            )}
-
+            <div className="creator">
+                {creator && (
+                    <>
+                        <img src={creator.profilePicture} alt={creator.username} />
+                        <div>
+                            <p><strong>Creator:</strong> {creator.username}</p>
+                            {data.createdAt && (
+                                <p><strong>Created at:</strong> {new Date(data.createdAt).toLocaleString()}</p>
+                            )}
+                        </div>
+                    </>
+                )}
+            </div>
             {loggedInUser?.role === "user" && !hideLikeButton && (
                 <>
                     <button onClick={likeProduct}>Like product</button>
                     {likedMessage && <span style={{ color: "#ff69b4" }}>{likedMessage}</span>}
                 </>
             )}
-
             {loggedInUser?.role === 'admin' && (
                 <button onClick={deleteProd} className="delete-btn">Delete Product</button>
             )}

@@ -27,7 +27,7 @@ const Home = () => {
                             key={product.id}
                         />
                     ) :
-                    <p>Loading</p>
+                    <p>There is no products to be displayed.</p>
             }
         </StyledHome>
     );
