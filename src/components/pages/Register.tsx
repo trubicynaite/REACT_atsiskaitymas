@@ -133,7 +133,7 @@ const Register = () => {
                     /\.png|\.jpg|\.jpeg|\.webm|\.svg$/i,
                     'URL must be an image.')
                 .trim()
-                .default('https://upload.wikimedia.org/wikipedia/commons/a/ac/Default_pfp.jpg')
+                .default('https://about.canva.com/wp-content/uploads/sites/8/2019/03/hot-pink.png')
         }),
         onSubmit: (values) => {
             if (users.find(user =>
@@ -150,7 +150,7 @@ const Register = () => {
                     id: generatedId(),
                     passwordText: rest.password,
                     password: bcrypt.hashSync(rest.password, 10),
-                    profilePicture: rest.profilePicture || 'https://gimgs2.nohat.cc/thumb/f/640/emoji-heart-iphone-sticker-clip-art-pink-heart-emoji-png--m2i8G6Z5K9N4A0K9.jpg',
+                    profilePicture: rest.profilePicture || 'https://about.canva.com/wp-content/uploads/sites/8/2019/03/hot-pink.png',
                     role: 'user',
                     likedProducts: []
                 }

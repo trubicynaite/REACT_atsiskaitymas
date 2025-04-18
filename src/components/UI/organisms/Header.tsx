@@ -68,7 +68,7 @@ const StyledHeader = styled.header`
     >img {
         height: 40px;
         width: 40px;
-        border-radius: 10%;
+        border-radius: 50%;
         object-fit: cover;
       }
 
