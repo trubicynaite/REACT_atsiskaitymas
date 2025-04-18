@@ -14,7 +14,7 @@ const StyledHeader = styled.header`
   >div.logo {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 15px;
 
     >img {
       height: 60px;
@@ -23,15 +23,19 @@ const StyledHeader = styled.header`
 
     >span {
       font-weight: bold;
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       color: #ff69b4;
     }
   }
 
   >nav {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+
     >ul {
     display: flex;
-    gap: 20px;
+    gap: 15px;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -40,15 +44,21 @@ const StyledHeader = styled.header`
     >a {
       text-decoration: none;
       font-weight: bold;
-      font-size: 1.5rem;
-      color: #ff69b4;
+      font-size: 1rem;
+      color: #ffa1d0;
+      border-radius: 20px;
+      background-color: #242424;
+      padding: 10px;
+      border: 1px solid #ffa1d0;
 
       &:hover {
-        color: #ffa1d0;
+        color: #ff69b4;
+        border: 1px solid #ff69b4;
       }
 
       &.active {
         color: #ff69b4;
+        border: 1px solid #ff69b4;
       }
      }
     }
@@ -103,68 +113,68 @@ const StyledHeader = styled.header`
 `;
 
 const Header = () => {
-    const { loggedInUser, setLoggedInUser } = useContext(UsersContext)!;
-    const navigate = useNavigate();
+  const { loggedInUser, setLoggedInUser } = useContext(UsersContext)!;
+  const navigate = useNavigate();
 
-    const handleLogout = () => {
-        setLoggedInUser(null);
-        localStorage.removeItem("loggedInUser");
-        navigate("/");
-    };
+  const handleLogout = () => {
+    setLoggedInUser(null);
+    localStorage.removeItem("loggedInUser");
+    navigate("/");
+  };
 
-    const location = useLocation();
-    const notHomePage = location.pathname === "/register" || location.pathname === "/login";
+  const location = useLocation();
+  const notHomePage = location.pathname === "/register" || location.pathname === "/login";
 
-    return (
-        <StyledHeader>
-            <div className="logo">
+  return (
+    <StyledHeader>
+      <div className="logo">
+        <img
+          src="https://static.vecteezy.com/system/resources/previews/038/497/937/non_2x/sparkling-heart-love-emoji-icon-object-symbol-gradient-art-design-cartoon-isolated-background-pink-heart-emoji-vector.jpg"
+          alt="logo"
+        />
+        <span>BeautyBoutique</span>
+      </div>
+
+      <nav>
+        <ul>
+          <li>
+            <NavLink to="/">Home</NavLink>
+          </li>
+          {!notHomePage && loggedInUser && (
+            <li>
+              <NavLink to="/add">Add Product</NavLink>
+            </li>
+          )}
+          {!notHomePage && loggedInUser?.role === "user" && (
+            <li>
+              <NavLink to="/liked">Liked Products</NavLink>
+            </li>
+          )}
+        </ul>
+      </nav>
+      {!notHomePage && (
+        <div className="userContainer">
+          {loggedInUser ? (
+            <>
+              <div className="profile">
                 <img
-                    src="https://static.vecteezy.com/system/resources/previews/038/497/937/non_2x/sparkling-heart-love-emoji-icon-object-symbol-gradient-art-design-cartoon-isolated-background-pink-heart-emoji-vector.jpg"
-                    alt="logo"
+                  src={loggedInUser.profilePicture}
+                  alt={loggedInUser.username}
                 />
-                <span>BeautyBoutique</span>
-            </div>
-
-            <nav>
-                <ul>
-                    <li>
-                        <NavLink to="/">Home</NavLink>
-                    </li>
-                    {!notHomePage && loggedInUser?.role === "admin" && (
-                        <li>
-                            <NavLink to="/add">Add Product</NavLink>
-                        </li>
-                    )}
-                    {!notHomePage && loggedInUser?.role === "user" && (
-                        <li>
-                            <NavLink to="/liked">Liked Products</NavLink>
-                        </li>
-                    )}
-                </ul>
-            </nav>
-            {!notHomePage && (
-                <div className="userContainer">
-                    {loggedInUser ? (
-                        <>
-                            <div className="profile">
-                                <img
-                                    src={loggedInUser.profilePicture}
-                                    alt={loggedInUser.username}
-                                />
-                                <span>{loggedInUser.username}</span>
-                            </div>
-                            <button onClick={handleLogout}>Logout</button>
-                        </>
-                    ) : (
-                        <>
-                            <Link to="/login">Login</Link>
-                            <Link to="/register">Register</Link>
-                        </>
-                    )}
-                </div>
-            )}
-        </StyledHeader>
-    );
+                <span>{loggedInUser.username}</span>
+              </div>
+              <button onClick={handleLogout}>Logout</button>
+            </>
+          ) : (
+            <>
+              <Link to="/login">Login</Link>
+              <Link to="/register">Register</Link>
+            </>
+          )}
+        </div>
+      )}
+    </StyledHeader>
+  );
 };
 
 export default Header;

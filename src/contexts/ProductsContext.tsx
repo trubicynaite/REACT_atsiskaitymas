@@ -6,6 +6,8 @@ const reducer = (state: Product[], action: ProductsReducerActionTypes): Product[
     switch (action.type) {
         case 'setData':
             return action.data;
+        case 'addProduct':
+            return [...state, action.newProduct];
         case 'deleteProduct':
             return state.filter(product => product.id !== action.productId);
         default:
@@ -31,6 +33,21 @@ const ProductsProvider = ({ children }: ChildrenProp) => {
             })
     }, []);
 
+
+    const addProduct = (newProduct: Product) => {
+        fetch(`http://localhost:8080/products`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(newProduct)
+        });
+        dispatch({
+            type: "addProduct",
+            newProduct: newProduct
+        });
+    }
+
     const deleteProduct = (id: Product["id"]) => {
         fetch(`http://localhost:8080/products/${id}`, {
             method: "DELETE",
@@ -48,6 +65,7 @@ const ProductsProvider = ({ children }: ChildrenProp) => {
         <ProductsContext.Provider
             value={{
                 products,
+                addProduct,
                 deleteProduct
             }}>
             {children}
