@@ -18,11 +18,11 @@ export type Product = {
     id: string,
     name: string,
     brandName: string,
-    category: string,
-    price: number,
+    price: string,
     description: string,
     productPicture: string,
-    skinType: string[]
+    creatorId?: string,
+    createdAt?: string
 };
 
 export type UsersReducerActionTypes =
@@ -39,9 +39,11 @@ export type UsersContextTypes = {
 
 export type ProductsReducerActionTypes =
     { type: 'setData', data: Product[] } |
+    { type: 'addProduct', newProduct: Product } |
     { type: 'deleteProduct', productId: Product["id"] };
 
 export type ProductsContextTypes = {
     products: Product[],
+    addProduct: (newProduct: Product) => void,
     deleteProduct: (id: Product["id"]) => void
 };

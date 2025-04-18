@@ -128,11 +128,22 @@ const ProductCard = ({ data, hideLikeButton }: Props) => {
         <StyledCard>
             <h3>{data.brandName}</h3>
             <h2>{data.name}</h2>
-            <p>Category: {data.category}</p>
             <img src={data.productPicture} alt={data.name} />
             <p>Price: {data.price} Eur.</p>
             <p>Description: {data.description}</p>
-            {loggedInUser && !hideLikeButton && (
+            {data.creatorId && (
+                <p style={{ fontSize: '0.8rem', color: '#ffa1d0' }}>
+                    <strong>Creator:</strong> {data.creatorId}
+                </p>
+            )}
+
+            {data.createdAt && (
+                <p style={{ fontSize: '0.8rem', color: '#ffa1d0' }}>
+                    <strong>Created at:</strong> {new Date(data.createdAt).toLocaleString()}
+                </p>
+            )}
+
+            {loggedInUser?.role === "user" && !hideLikeButton && (
                 <>
                     <button onClick={likeProduct}>Like product</button>
                     {likedMessage && <span style={{ color: "#ff69b4" }}>{likedMessage}</span>}
