@@ -21,13 +21,13 @@ const StyledFooter = styled.footer`
       gap: 15px;
 
       >a {
-        color: palevioletred;
+        color: #ff69b4;
         font-size: 1.5rem;
         text-decoration: none;
         transition: color 0.3s ease;
 
         &:hover {
-          color: #ffc0e6;
+          color: #ffa1d0;
         }
       }
     }

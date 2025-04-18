@@ -4,10 +4,10 @@
             "id": "111",
             "username": "adminMonika",
             "email": "monika123@gmail.com",
-            "password": "",
+            "password": "$2b$10$CgQ22/SsKQQfHNenaNesCeablV3buPoS/ThLyC19vaWKrPZjQwsQK",
             "passwordText": "Admin123!",
             "dob": "2001-01-01",
-            "profilePicture": "https://media.istockphoto.com/id/1135769825/vector/star-icon-vector-illustration.jpg?s=612x612&w=0&k=20&c=6jMpeAqUVM2db6kdhzj-nxA52Sqk3ImpN-GP9lIeaXE=",
+            "profilePicture": "https://static.vecteezy.com/system/resources/previews/019/816/407/non_2x/pink-couple-hearts-large-size-of-emoji-romance-icon-vector.jpg",
             "role": "admin",
             "likedProducts": [
                 "1"
@@ -17,15 +17,26 @@
             "id": "222",
             "username": "userAmelija",
             "email": "amelija456@gmail.com",
-            "password": "",
+            "password": "$2b$10$bOcIjF6cyyNb3OcFN1BvqeHBQTF6YRsl./Au5GH2Sl6QxUTYyGerq",
             "passwordText": "User456@",
             "dob": "2002-02-02",
-            "profilePicture": "https://static.vecteezy.com/system/resources/thumbnails/000/378/728/small/Basic_Elements__28120_29.jpg",
+            "profilePicture": "https://hips.hearstapps.com/hmg-prod/images/heart-with-ribbon-643083459dc7f.jpg?crop=1xw:1xh;center,top&resize=980:*",
             "role": "user",
             "likedProducts": [
                 "2",
                 "3"
             ]
+        },
+        {
+            "id": "0fa744ed-1680-4fb1-af56-81bb1f6de116",
+            "username": "jovita123",
+            "email": "jovita123@gmail.com",
+            "password": "$2b$10$GH55MFo1A0A0UtLzNsmj3OnXjrS3aQS1HiNTUHuLTYBIL8TovTzNG",
+            "dob": "2010-02-03",
+            "profilePicture": "https://about.canva.com/wp-content/uploads/sites/8/2019/03/hot-pink.png",
+            "likedProducts": [],
+            "passwordText": "Jovita123!",
+            "role": "user"
         }
     ],
     "products": [

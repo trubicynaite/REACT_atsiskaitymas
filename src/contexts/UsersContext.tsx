@@ -20,7 +20,6 @@ const reducer = (state: User[], action: UsersReducerActionTypes): User[] => {
                 if (user.id !== action.userId) {
                     return user;
                 }
-
                 const alreadyLiked = user.likedProducts?.includes(action.productId);
                 const updateLikedProducts = alreadyLiked ?
                     user.likedProducts :
@@ -69,7 +68,6 @@ const UsersProvider = ({ children }: ChildrenProp) => {
 
     useEffect(() => {
         if (!loggedInUser) return;
-
         const updatedUser = users.find(user => user.id === loggedInUser.id);
         if (updatedUser) {
             setLoggedInUser(updatedUser);

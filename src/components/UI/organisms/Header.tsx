@@ -24,7 +24,7 @@ const StyledHeader = styled.header`
     >span {
       font-weight: bold;
       font-size: 1.5rem;
-      color: palevioletred;
+      color: #ff69b4;
     }
   }
 
@@ -41,14 +41,14 @@ const StyledHeader = styled.header`
       text-decoration: none;
       font-weight: bold;
       font-size: 1.5rem;
-      color: palevioletred;
+      color: #ff69b4;
 
       &:hover {
-        color: #ffc0e6;
+        color: #ffa1d0;
       }
 
       &.active {
-        color: palevioletred;
+        color: #ff69b4;
       }
      }
     }
@@ -79,7 +79,7 @@ const StyledHeader = styled.header`
     }
 
    >a, button {
-      background-color: palevioletred;
+      background-color: #ff69b4;
       border: none;
       border-radius: 50px;
       padding: 6px 12px;
@@ -90,15 +90,14 @@ const StyledHeader = styled.header`
       cursor: pointer;
 
       &:hover {
-        background-color: #ffc0e6;
+        background-color: #ffa1d0;
         color: black;
         transition: color 0.3s ease;
       }
     }
 
     >button {
-      border: 1px solid white;
-      background: transparent;
+      background: #ff69b4;
     }
   }
 `;
